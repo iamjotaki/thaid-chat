@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="th" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Chat AI — แอดมินตอบแชท LINE OA อัจฉริยะ 24 ชม. — ThaiD.online</title>
+  <meta name="description" content="ระบบ AI แอดมินตอบแชทลูกค้าบน LINE Official Account อัจฉริยะ 24 ชั่วโมง มีคลังความรู้สินค้า ปิดการขาย ตอบไวใน 1 วินาที">
+  <link rel="icon" href="https://thaid.online/favicon.ico">
+
+  <script>
+    (function(){
+      try{
+        var s = localStorage.getItem('thaid-theme');
+        if(s === 'light'){
+          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.add('light');
+        } else {
+          document.documentElement.classList.add('dark');
+          document.documentElement.classList.remove('light');
+        }
+      }catch(e){}
+    })();
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Prompt', 'sans-serif'],
+            thai: ['Prompt', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
+          colors: {
+            brand: {
+              line: '#06c755',
+              lineDark: '#05b04b',
+              blue: '#0071e3',
+              coral: '#e85a2d',
+              dark: '#0c0c0e',
+              cardDark: '#161619'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(150,150,150,0.3); border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(150,150,150,0.5); }
+    
+    /* LINE Chat Background */
+    .bg-line-chat-dark {
+      background-color: #1e242b;
+      background-image: radial-gradient(#2d3748 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    .light .bg-line-chat-dark {
+      background-color: #8da4be;
+      background-image: radial-gradient(#9fb4cc 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+  </style>
+</head>
+
+<body class="bg-[#f5f5f7] dark:bg-[#0c0c0e] text-[#1d1d1f] dark:text-[#f5f5f7] min-h-screen flex flex-col font-sans selection:bg-emerald-500/20 selection:text-emerald-500 transition-colors duration-300">
+
+  <!-- ======================================================== -->
+  <!-- 1. TRANSLUCENT GLOBAL HEADER (APPLE FROSTED NAVBAR)     -->
+  <!-- ======================================================== -->
+  <header class="sticky top-0 z-50 h-[52px] bg-white/80 dark:bg-[#161619]/80 backdrop-blur-xl border-b border-black/[0.08] dark:border-white/[0.08] shadow-xs">
+    <div class="max-w-[1700px] w-full mx-auto px-4 sm:px-6 h-full flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo -->
+      <a href="https://thaid.online" class="flex items-center gap-2.5 cursor-pointer group flex-shrink-0">
+        <div class="w-7 h-7 rounded-lg bg-[#06c755] flex items-center justify-center text-white shadow-xs group-hover:scale-105 transition-transform">
+          <span class="material-symbols-outlined text-[17px]">forum</span>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <span class="text-sm sm:text-base font-bold tracking-tight text-[#1d1d1f] dark:text-white">
+            ThaiD<span class="text-[#06c755]">.online</span>
+          </span>
+          <span class="bg-[#06c755]/10 text-[#06c755] border border-[#06c755]/20 text-[9px] font-bold px-1.5 py-0.5 rounded tracking-wider uppercase">
+            SMART CHAT
+          </span>
+        </div>
+      </a>
+
+      <!-- Center: Contextual Segmented Navigation Links (Unified Ecosystem Standard) -->
+      <nav class="hidden lg:flex items-center gap-1 bg-stone-200/60 dark:bg-white/[0.06] p-1 rounded-xl border border-black/[0.04] dark:border-white/[0.05] text-xs font-medium">
+        <a href="https://thaid.online" class="px-2.5 py-1 rounded-lg text-[#86868b] hover:text-[#1d1d1f] dark:text-stone-400 dark:hover:text-white transition-colors flex items-center gap-1">
+          <span class="material-symbols-outlined text-[13px]">hub</span>
+          <span>ThaiD Hub</span>
+        </a>
+        <a href="https://novel.thaid.online" class="px-2.5 py-1 rounded-lg text-[#86868b] hover:text-[#1d1d1f] dark:text-stone-400 dark:hover:text-white transition-colors flex items-center gap-1">
+          <span class="material-symbols-outlined text-[13px]">edit_note</span>
+          <span>นิยาย AI</span>
+        </a>
+        <a href="https://social.thaid.online" class="px-2.5 py-1 rounded-lg text-[#86868b] hover:text-[#1d1d1f] dark:text-stone-400 dark:hover:text-white transition-colors flex items-center gap-1">
+          <span class="material-symbols-outlined text-[13px]">campaign</span>
+          <span>โพสต์ Facebook</span>
+        </a>
+        <a href="https://sticker.thaid.online" class="px-2.5 py-1 rounded-lg text-[#86868b] hover:text-[#1d1d1f] dark:text-stone-400 dark:hover:text-white transition-colors flex items-center gap-1">
+          <span class="material-symbols-outlined text-[13px]">sentiment_satisfied</span>
+          <span>สติกเกอร์ไลน์</span>
+        </a>
+        <a href="https://clip.thaid.online" class="px-2.5 py-1 rounded-lg text-[#86868b] hover:text-[#1d1d1f] dark:text-stone-400 dark:hover:text-white transition-colors flex items-center gap-1">
+          <span class="material-symbols-outlined text-[13px]">movie</span>
+          <span>คลิปสั้น AI</span>
+        </a>
+        <a href="https://chat.thaid.online" class="px-2.5 py-1 rounded-lg text-[#06c755] bg-white dark:bg-white/10 shadow-xs font-semibold flex items-center gap-1 border border-[#06c755]/30">
+          <span class="material-symbols-outlined text-[13px]">forum</span>
+          <span>แชทบอท LINE</span>
+        </a>
+      </nav>
+
+      <!-- Right Controls: Status + Dark Mode Toggle -->
+      <div class="flex items-center gap-2.5 flex-shrink-0">
+        <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-xs">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span class="font-medium text-[11px]">Gemini 3.5 Ready</span>
+        </div>
+
+        <button id="themeToggleBtn" onclick="toggleTheme()" class="p-1.5 rounded-lg text-stone-600 hover:text-[#1d1d1f] dark:text-stone-400 dark:hover:text-stone-100 hover:bg-stone-200/60 dark:hover:bg-white/10 transition-colors" title="สลับโหมดมืด / สว่าง">
+          <span id="themeIcon" class="material-symbols-outlined text-[19px]">light_mode</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ======================================================== -->
+  <!-- 2. STUDIO MAIN CONTAINER                                -->
+  <!-- ======================================================== -->
+  <main class="max-w-[1700px] w-full mx-auto px-4 sm:px-6 py-6 flex-1 flex flex-col gap-6">
+
+    <!-- Top Tab Navigation Ribbon -->
+    <div class="flex items-center justify-between border-b border-black/[0.08] dark:border-white/[0.08] pb-3 flex-wrap gap-3">
+      
+      <div class="flex items-center gap-1 bg-stone-200/60 dark:bg-white/[0.06] p-1 rounded-xl text-xs font-semibold">
+        <button onclick="switchTab('simulator')" id="tabBtnSimulator" class="tab-btn active px-3.5 py-1.5 rounded-lg bg-white dark:bg-stone-800 text-[#1d1d1f] dark:text-white shadow-xs flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[15px]">chat</span>
+          <span>จำลองห้องแชท (Simulator)</span>
+        </button>
+        <button onclick="switchTab('kb')" id="tabBtnKb" class="tab-btn px-3.5 py-1.5 rounded-lg text-stone-600 dark:text-stone-400 hover:text-[#1d1d1f] dark:hover:text-white flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[15px]">menu_book</span>
+          <span>คลังความรู้ร้านค้า (Knowledge Base)</span>
+        </button>
+        <button onclick="switchTab('line_setup')" id="tabBtnLineSetup" class="tab-btn px-3.5 py-1.5 rounded-lg text-stone-600 dark:text-stone-400 hover:text-[#1d1d1f] dark:hover:text-white flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[15px]">link</span>
+          <span>เชื่อมต่อ LINE OA</span>
+        </button>
+        <button onclick="switchTab('logs')" id="tabBtnLogs" class="tab-btn px-3.5 py-1.5 rounded-lg text-stone-600 dark:text-stone-400 hover:text-[#1d1d1f] dark:hover:text-white flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[15px]">analytics</span>
+          <span>ประวัติ & สถิติ</span>
+        </button>
+      </div>
+
+      <!-- Quick Info Pill -->
+      <div class="flex items-center gap-2 text-xs text-stone-500">
+        <span>ร้านค้า: <strong id="headerStoreName" class="text-emerald-500 font-bold">ThaiD Store</strong></span>
+        <span>•</span>
+        <span id="headerKbStats">4 สินค้า / 4 FAQ</span>
+      </div>
+
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- TAB 1: INTERACTIVE LINE CHAT SIMULATOR                  -->
+    <!-- ======================================================== -->
+    <div id="tabContentSimulator" class="tab-content grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+      
+      <!-- Left 7 Cols: Information & Quick Prompt Chips -->
+      <div class="lg:col-span-7 bg-white dark:bg-[#161619] rounded-2xl p-5 border border-black/[0.06] dark:border-white/[0.08] shadow-sm flex flex-col gap-4">
+        
+        <div class="flex items-center justify-between border-b border-black/5 dark:border-white/5 pb-3">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-emerald-500">smart_toy</span>
+            <h3 class="font-bold text-sm text-[#1d1d1f] dark:text-white">แอดมิน AI ตอบคำถามเสมือนจริง (AI Admin Sandbox)</h3>
+          </div>
+          <span class="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full">
+            ตอบกลับใน ~0.8 วินาที
+          </span>
+        </div>
+
+        <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
+          ทดลองพูดคุยกับแอดมิน AI ได้ทันทีในกล่องแชทด้านขวา โดย AI จะดึงข้อมูลจาก <strong>คลังความรู้ร้านค้า (Knowledge Base)</strong> เช่น รายการสินค้า, ราคาพิเศษ, ข้อมูลการจัดส่ง, เลขบัญชี, และนโยบายรับประกัน เพื่อตอบคำถามอย่างสุภาพและช่วยปิดการขาย
+        </p>
+
+        <!-- Quick Question Chips -->
+        <div>
+          <span class="text-xs font-bold text-stone-500 dark:text-stone-400 block mb-2">ลองกดถามคำถามยอดนิยม:</span>
+          <div class="flex flex-wrap gap-2 text-xs" id="quickChipsContainer">
+            <button onclick="sendQuickMessage('สวัสดีครับ มีสินค้าอะไรแนะนำบ้างครับ')" class="px-3 py-1.5 rounded-xl bg-stone-100 dark:bg-stone-800 hover:bg-emerald-500 hover:text-white text-stone-700 dark:text-stone-300 font-medium transition-colors">
+              ✨ แนะนำสินค้าขายดีหน่อย
+            </button>
+            <button onclick="sendQuickMessage('แก้วเก็บความเย็นราคาเท่าไหร่ เก็บได้กี่ชั่วโมงคะ')" class="px-3 py-1.5 rounded-xl bg-stone-100 dark:bg-stone-800 hover:bg-emerald-500 hover:text-white text-stone-700 dark:text-stone-300 font-medium transition-colors">
+              🥤 แก้วเก็บความเย็นราคาเท่าไหร่
+            </button>
+            <button onclick="sendQuickMessage('มีบริการเก็บเงินปลายทางไหมคะ')" class="px-3 py-1.5 rounded-xl bg-stone-100 dark:bg-stone-800 hover:bg-emerald-500 hover:text-white text-stone-700 dark:text-stone-300 font-medium transition-colors">
+              📦 มีเก็บเงินปลายทางไหม
+            </button>
+            <button onclick="sendQuickMessage('สั่งวันนี้ของถึงวันไหนคะ')" class="px-3 py-1.5 rounded-xl bg-stone-100 dark:bg-stone-800 hover:bg-emerald-500 hover:text-white text-stone-700 dark:text-stone-300 font-medium transition-colors">
+              🚚 ส่งของวันไหน ได้รับเมื่อไหร่
+            </button>
+            <button onclick="sendQuickMessage('ขอเลขที่บัญชีสำหรับโอนเงินหน่อยครับ')" class="px-3 py-1.5 rounded-xl bg-stone-100 dark:bg-stone-800 hover:bg-emerald-500 hover:text-white text-stone-700 dark:text-stone-300 font-medium transition-colors">
+              💳 ขอเลขบัญชีโอนเงิน
+            </button>
+            <button onclick="sendQuickMessage('สินค้ามีรับประกันไหมคะ')" class="px-3 py-1.5 rounded-xl bg-stone-100 dark:bg-stone-800 hover:bg-emerald-500 hover:text-white text-stone-700 dark:text-stone-300 font-medium transition-colors">
+              🛡️ นโยบายรับประกันสินค้า
+            </button>
+          </div>
+        </div>
+
+        <!-- AI Capabilities Summary Box -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-3 border-t border-black/5 dark:border-white/5">
+          <div class="p-3 rounded-xl bg-stone-50 dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800">
+            <span class="material-symbols-outlined text-emerald-500 text-[18px]">bolt</span>
+            <div class="text-xs font-bold text-[#1d1d1f] dark:text-white mt-1">ตอบกลับทันที 24/7</div>
+            <div class="text-[10px] text-stone-400">ไม่ต้องรอแอดมินคนพิมพ์</div>
+          </div>
+          <div class="p-3 rounded-xl bg-stone-50 dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800">
+            <span class="material-symbols-outlined text-blue-500 text-[18px]">verified</span>
+            <div class="text-xs font-bold text-[#1d1d1f] dark:text-white mt-1">คลังความรู้ส่วนตัว</div>
+            <div class="text-[10px] text-stone-400">ตอบตามข้อมูลร้าน 100%</div>
+          </div>
+          <div class="p-3 rounded-xl bg-stone-50 dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800">
+            <span class="material-symbols-outlined text-pink-500 text-[18px]">currency_exchange</span>
+            <div class="text-xs font-bold text-[#1d1d1f] dark:text-white mt-1">ต้นทุน API 0 บาท</div>
+            <div class="text-[10px] text-stone-400">ใช้ 80 คีย์ฟรีจาก ThaiD Vault</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right 5 Cols: Smartphone LINE Chat Simulator -->
+      <div class="lg:col-span-5 flex justify-center">
+        
+        <div class="w-full max-w-[380px] rounded-[36px] bg-stone-900 border-4 border-stone-700 dark:border-stone-800 shadow-2xl overflow-hidden flex flex-col h-[650px]">
+          
+          <!-- LINE Chat Header Bar -->
+          <div class="bg-[#242b33] px-4 py-3 flex items-center justify-between border-b border-white/10 z-10">
+            <div class="flex items-center gap-2.5">
+              <span class="material-symbols-outlined text-white text-[20px] cursor-pointer">arrow_back_ios</span>
+              <div class="w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold text-xs shadow-xs">
+                TH
+              </div>
+              <div>
+                <div class="font-bold text-xs text-white" id="chatHeaderName">น้องใจดี (แอดมิน AI)</div>
+                <div class="text-[10px] text-emerald-400 flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span>พร้อมตอบกลับทันที</span>
+                </div>
+              </div>
+            </div>
+            <button onclick="clearChatMessages()" class="text-stone-400 hover:text-white" title="ล้างการสนทนา">
+              <span class="material-symbols-outlined text-[18px]">delete_sweep</span>
+            </button>
+          </div>
+
+          <!-- Chat Scrollable Body -->
+          <div class="flex-1 bg-line-chat-dark p-3 overflow-y-auto space-y-3 custom-scrollbar text-xs" id="chatMessages">
+            
+            <!-- Welcome message from AI -->
+            <div class="flex items-start gap-2 max-w-[85%]">
+              <div class="w-7 h-7 rounded-full bg-emerald-600 flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">
+                AI
+              </div>
+              <div class="bg-white dark:bg-[#2b333d] text-[#1d1d1f] dark:text-white p-3 rounded-2xl rounded-tl-none shadow-sm leading-relaxed">
+                สวัสดีค่ะ ยินดีต้อนรับเข้าสู่ <strong>ThaiD Gadget & Lifestyle</strong> ค่ะ 😊 วันนี้มีอะไรให้น้องใจดีช่วยดูแล สอบถามสินค้าหรือโปรโมชั่นพิเศษได้เลยนะคะ ✨
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Typing Indicator (Hidden by default) -->
+          <div id="typingIndicator" class="hidden px-4 py-1.5 bg-[#242b33] text-stone-400 text-[11px] flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[13px] animate-spin">sync</span>
+            <span>แอดมินกำลังพิมพ์ข้อความ...</span>
+          </div>
+
+          <!-- Input Bottom Bar -->
+          <div class="bg-[#242b33] p-2.5 flex items-center gap-2 border-t border-white/10">
+            <input id="inputUserMessage" type="text" onkeydown="handleChatKeyDown(event)" placeholder="พิมพ์ข้อความคุยกับแอดมิน..." class="flex-1 bg-[#1a1f26] border border-white/10 rounded-full px-3.5 py-2 text-xs text-white placeholder-stone-400 focus:outline-none focus:border-emerald-500">
+            <button onclick="handleSendMessage()" class="w-8 h-8 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center transition-colors flex-shrink-0">
+              <span class="material-symbols-outlined text-[16px]">send</span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- TAB 2: KNOWLEDGE BASE STUDIO                            -->
+    <!-- ======================================================== -->
+    <div id="tabContentKb" class="tab-content hidden grid grid-cols-1 lg:grid-cols-12 gap-6">
+      
+      <!-- Store Profile Card -->
+      <div class="lg:col-span-6 bg-white dark:bg-[#161619] rounded-2xl p-5 border border-black/[0.06] dark:border-white/[0.08] shadow-sm flex flex-col gap-4">
+        <div class="flex items-center gap-2 border-b border-black/5 dark:border-white/5 pb-3">
+          <span class="material-symbols-outlined text-emerald-500">store</span>
+          <h3 class="font-bold text-sm text-[#1d1d1f] dark:text-white">ข้อมูลร้านค้า & แอดมิน (Store Profile)</h3>
+        </div>
+
+        <div class="space-y-3 text-xs">
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block font-semibold text-stone-600 dark:text-stone-300 mb-1">ชื่อร้านค้า:</label>
+              <input id="kbStoreName" type="text" class="w-full bg-stone-100 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl p-2.5 text-xs text-[#1d1d1f] dark:text-white focus:outline-none focus:border-emerald-500 font-semibold">
+            </div>
+            <div>
+              <label class="block font-semibold text-stone-600 dark:text-stone-300 mb-1">ชื่อแอดมิน AI:</label>
+              <input id="kbAdminName" type="text" class="w-full bg-stone-100 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl p-2.5 text-xs text-[#1d1d1f] dark:text-white focus:outline-none focus:border-emerald-500 font-semibold">
+            </div>
+          </div>
+
+          <div>
+            <label class="block font-semibold text-stone-600 dark:text-stone-300 mb-1">สโลแกน / คำอธิบายร้าน:</label>
+            <input id="kbTagline" type="text" class="w-full bg-stone-100 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl p-2.5 text-xs text-[#1d1d1f] dark:text-white focus:outline-none">
+          </div>
+
+          <div>
+            <label class="block font-semibold text-stone-600 dark:text-stone-300 mb-1">ข้อมูลการจัดส่ง & ค่าส่ง:</label>
+            <textarea id="kbDeliveryInfo" rows="2" class="w-full bg-stone-100 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl p-2.5 text-xs text-[#1d1d1f] dark:text-white focus:outline-none"></textarea>
+          </div>
+
+          <div>
+            <label class="block font-semibold text-stone-600 dark:text-stone-300 mb-1">เลขที่บัญชีชำระเงิน & ช่องทางชำระ:</label>
+            <textarea id="kbPaymentInfo" rows="2" class="w-full bg-stone-100 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl p-2.5 text-xs text-[#1d1d1f] dark:text-white focus:outline-none"></textarea>
+          </div>
+
+          <div>
+            <label class="block font-semibold text-stone-600 dark:text-stone-300 mb-1">นโยบายการรับประกัน & เปลี่ยนสินค้า:</label>
+            <textarea id="kbReturnPolicy" rows="2" class="w-full bg-stone-100 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl p-2.5 text-xs text-[#1d1d1f] dark:text-white focus:outline-none"></textarea>
+          </div>
+        </div>
+
+        <button onclick="handleSaveKb()" class="mt-2 py-2 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-xs transition-colors flex items-center justify-center gap-1.5">
+          <span class="material-symbols-outlined text-[16px]">save</span>
+          <span>บันทึกข้อมูลร้านค้า</span>
+        </button>
+      </div>
+
+      <!-- Products & FAQs List -->
+      <div class="lg:col-span-6 flex flex-col gap-5">
+        
+        <!-- Products Box -->
+        <div class="bg-white dark:bg-[#161619] rounded-2xl p-5 border border-black/[0.06] dark:border-white/[0.08] shadow-sm flex flex-col gap-3">
+          <div class="flex items-center justify-between border-b border-black/5 dark:border-white/5 pb-2">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-blue-500">inventory_2</span>
+              <h3 class="font-bold text-sm text-[#1d1d1f] dark:text-white">รายการสินค้า & ราคา (Product Catalog)</h3>
+            </div>
+            <button onclick="openAddProductModal()" class="px-2 py-1 rounded-lg bg-blue-500/10 hover:bg-blue-500 text-blue-600 hover:text-white text-[11px] font-bold transition-colors flex items-center gap-1">
+              <span class="material-symbols-outlined text-[13px]">add</span>
+              <span>เพิ่มสินค้า</span>
+            </button>
+          </div>
+
+          <div class="space-y-2 max-h-[250px] overflow-y-auto custom-scrollbar" id="kbProductsList">
+            <!-- Injected via JS -->
+          </div>
+        </div>
+
+        <!-- FAQs Box -->
+        <div class="bg-white dark:bg-[#161619] rounded-2xl p-5 border border-black/[0.06] dark:border-white/[0.08] shadow-sm flex flex-col gap-3">
+          <div class="flex items-center justify-between border-b border-black/5 dark:border-white/5 pb-2">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-purple-500">help</span>
+              <h3 class="font-bold text-sm text-[#1d1d1f] dark:text-white">คำถามที่พบบ่อย (FAQ Database)</h3>
+            </div>
+            <button onclick="openAddFaqModal()" class="px-2 py-1 rounded-lg bg-purple-500/10 hover:bg-purple-500 text-purple-600 hover:text-white text-[11px] font-bold transition-colors flex items-center gap-1">
+              <span class="material-symbols-outlined text-[13px]">add</span>
+              <span>เพิ่ม FAQ</span>
+            </button>
+          </div>
+
+          <div class="space-y-2 max-h-[250px] overflow-y-auto custom-scrollbar" id="kbFaqsList">
+            <!-- Injected via JS -->
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- TAB 3: LINE OA SETUP & WEBHOOK GUIDE                    -->
+    <!-- ======================================================== -->
+    <div id="tabContentLineSetup" class="tab-content hidden max-w-4xl mx-auto w-full bg-white dark:bg-[#161619] rounded-2xl p-6 border border-black/[0.06] dark:border-white/[0.08] shadow-sm flex flex-col gap-5">
+      
+      <div class="flex items-center gap-2 border-b border-black/5 dark:border-white/5 pb-3">
+        <span class="material-symbols-outlined text-[#06c755]">phonelink_setup</span>
+        <h3 class="font-bold text-sm text-[#1d1d1f] dark:text-white">วิธีเชื่อมต่อ LINE Official Account (Webhook Integration)</h3>
+      </div>
+
+      <!-- Step 1: Webhook URL -->
+      <div class="p-4 rounded-xl bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 space-y-2">
+        <span class="text-xs font-bold text-emerald-500 flex items-center gap-1">
+          <span class="material-symbols-outlined text-[15px]">looks_one</span>
+          <span>1. คัดลอก Webhook URL ไปวางใน LINE Developers Console:</span>
+        </span>
+        <div class="flex items-center gap-2">
+          <input type="text" readonly value="https://chat.thaid.online/webhook" class="flex-1 bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg px-3 py-2 text-xs font-mono text-emerald-600 dark:text-emerald-400 font-bold select-all">
+          <button onclick="navigator.clipboard.writeText('https://chat.thaid.online/webhook'); alert('คัดลอก URL เรียบร้อยแล้ว')" class="px-3 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-colors flex items-center gap-1">
+            <span class="material-symbols-outlined text-[14px]">content_copy</span>
+            <span>คัดลอก</span>
+          </button>
+        </div>
+        <p class="text-[11px] text-stone-500 dark:text-stone-400">
+          * เข้าสู่ระบบ <a href="https://developers.line.biz/" target="_blank" class="text-emerald-500 underline">LINE Developers Console</a> > เข้า Channel Messaging API > เมนู <strong>Messaging API</strong> > วาง URL ในช่อง <strong>Webhook URL</strong> และกดเปิด <strong>Use Webhook</strong>
+        </p>
+      </div>
+
+      <!-- Step 2: Channel Credentials -->
+      <div class="p-4 rounded-xl bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 space-y-3 text-xs">
+        <span class="text-xs font-bold text-emerald-500 flex items-center gap-1">
+          <span class="material-symbols-outlined text-[15px]">looks_two</span>
+          <span>2. ระบุ Channel Secret และ Channel Access Token:</span>
+        </span>
+
+        <div>
+          <label class="block font-semibold text-stone-600 dark:text-stone-300 mb-1">Channel Secret (ดูในแท็บ Basic Settings):</label>
+          <input id="inputLineSecret" type="password" placeholder="ระบุ Channel Secret 32 ตัวอักษร..." class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg px-3 py-2 text-xs font-mono text-[#1d1d1f] dark:text-white">
+        </div>
+
+        <div>
+          <label class="block font-semibold text-stone-600 dark:text-stone-300 mb-1">Channel Access Token (long-lived) (ดูในแท็บ Messaging API):</label>
+          <textarea id="inputLineToken" rows="3" placeholder="ระบุ Channel Access Token..." class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg p-2.5 text-xs font-mono text-[#1d1d1f] dark:text-white"></textarea>
+        </div>
+
+        <button onclick="handleSaveLineSettings()" class="py-2 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-xs transition-colors flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[16px]">check_circle</span>
+          <span>บันทึกการเชื่อมต่อ LINE OA</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- TAB 4: CHAT LOGS & ANALYTICS                            -->
+    <!-- ======================================================== -->
+    <div id="tabContentLogs" class="tab-content hidden flex flex-col gap-5">
+      
+      <!-- Stats Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="bg-white dark:bg-[#161619] rounded-2xl p-4 border border-black/[0.06] dark:border-white/[0.08] shadow-sm flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
+            <span class="material-symbols-outlined text-[22px]">mark_chat_read</span>
+          </div>
+          <div>
+            <div class="text-[11px] text-stone-500 dark:text-stone-400 font-semibold">ข้อความตอบกลับสะสม</div>
+            <div class="text-xl font-bold text-[#1d1d1f] dark:text-white" id="statTotalMsgs">0</div>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-[#161619] rounded-2xl p-4 border border-black/[0.06] dark:border-white/[0.08] shadow-sm flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center">
+            <span class="material-symbols-outlined text-[22px]">speed</span>
+          </div>
+          <div>
+            <div class="text-[11px] text-stone-500 dark:text-stone-400 font-semibold">ความเร็วเฉลี่ย AI</div>
+            <div class="text-xl font-bold text-[#1d1d1f] dark:text-white">~0.85s</div>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-[#161619] rounded-2xl p-4 border border-black/[0.06] dark:border-white/[0.08] shadow-sm flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-500 flex items-center justify-center">
+            <span class="material-symbols-outlined text-[22px]">support_agent</span>
+          </div>
+          <div>
+            <div class="text-[11px] text-stone-500 dark:text-stone-400 font-semibold">ความพร้อมบริการ 24/7</div>
+            <div class="text-xl font-bold text-emerald-500">100%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Logs Table -->
+      <div class="bg-white dark:bg-[#161619] rounded-2xl p-5 border border-black/[0.06] dark:border-white/[0.08] shadow-sm flex flex-col gap-3">
+        <div class="flex items-center justify-between border-b border-black/5 dark:border-white/5 pb-2">
+          <h3 class="font-bold text-sm text-[#1d1d1f] dark:text-white">ประวัติการสนทนาล่าสุด (Recent Chat Logs)</h3>
+          <button onclick="loadChatLogs()" class="px-2.5 py-1 rounded-lg bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 text-xs font-semibold transition-colors flex items-center gap-1">
+            <span class="material-symbols-outlined text-[13px]">refresh</span>
+            <span>รีเฟรช</span>
+          </button>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead>
+              <tr class="border-b border-black/5 dark:border-white/5 text-stone-400">
+                <th class="py-2 px-3">เวลา</th>
+                <th class="py-2 px-3">ช่องทาง</th>
+                <th class="py-2 px-3">คำถามลูกค้า</th>
+                <th class="py-2 px-3">คำตอบของ AI</th>
+              </tr>
+            </thead>
+            <tbody id="logsTableBody" class="divide-y divide-black/5 dark:divide-white/5">
+              <tr>
+                <td colspan="4" class="py-6 text-center text-stone-400">ยังไม่มีประวัติการสนทนา</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ======================================================== -->
+  <!-- 3. FOOTER                                               -->
+  <!-- ======================================================== -->
+  <footer class="mt-auto border-t border-black/[0.08] dark:border-white/[0.08] bg-white/50 dark:bg-[#161619]/50 backdrop-blur-md py-6 text-xs text-stone-500">
+    <div class="max-w-[1700px] w-full mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-[#1d1d1f] dark:text-white">ThaiD Smart Chat AI Studio</span>
+        <span>•</span>
+        <span>ขับเคลื่อนด้วย Gemini 3.5 Flash Lite + LINE Messaging API</span>
+      </div>
+      <div>
+        <span>ส่วนหนึ่งของ <a href="https://thaid.online" class="text-emerald-500 font-semibold hover:underline">ThaiD.online Ecosystem</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================== -->
+  <!-- 4. JAVASCRIPT APPLICATION LOGIC                          -->
+  <!-- ======================================================== -->
+  <script>
+    let KB_DATA = null;
+    let CHAT_HISTORY = [];
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      initTheme();
+      await loadKbData();
+      await loadSettings();
+      await loadChatLogs();
+    });
+
+    function initTheme() {
+      const isDark = document.documentElement.classList.contains('dark');
+      document.getElementById('themeIcon').textContent = isDark ? 'light_mode' : 'dark_mode';
+    }
+
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.contains('dark');
+      if (isDark) {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+        localStorage.setItem('thaid-theme', 'light');
+        document.getElementById('themeIcon').textContent = 'dark_mode';
+      } else {
+        document.documentElement.classList.remove('light');
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('thaid-theme', 'dark');
+        document.getElementById('themeIcon').textContent = 'light_mode';
+      }
+    }
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(b => {
+        b.classList.remove('bg-white', 'dark:bg-stone-800', 'text-[#1d1d1f]', 'dark:text-white', 'shadow-xs', 'active');
+        b.classList.add('text-stone-600', 'dark:text-stone-400');
+      });
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+
+      if (tabId === 'simulator') {
+        document.getElementById('tabBtnSimulator').classList.add('bg-white', 'dark:bg-stone-800', 'text-[#1d1d1f]', 'dark:text-white', 'shadow-xs', 'active');
+        document.getElementById('tabContentSimulator').classList.remove('hidden');
+      } else if (tabId === 'kb') {
+        document.getElementById('tabBtnKb').classList.add('bg-white', 'dark:bg-stone-800', 'text-[#1d1d1f]', 'dark:text-white', 'shadow-xs', 'active');
+        document.getElementById('tabContentKb').classList.remove('hidden');
+      } else if (tabId === 'line_setup') {
+        document.getElementById('tabBtnLineSetup').classList.add('bg-white', 'dark:bg-stone-800', 'text-[#1d1d1f]', 'dark:text-white', 'shadow-xs', 'active');
+        document.getElementById('tabContentLineSetup').classList.remove('hidden');
+      } else if (tabId === 'logs') {
+        document.getElementById('tabBtnLogs').classList.add('bg-white', 'dark:bg-stone-800', 'text-[#1d1d1f]', 'dark:text-white', 'shadow-xs', 'active');
+        document.getElementById('tabContentLogs').classList.remove('hidden');
+        loadChatLogs();
+      }
+    }
+
+    // Load and Render Knowledge Base
+    async function loadKbData() {
+      try {
+        const res = await fetch('/api/kb');
+        const data = await res.json();
+        if (data.ok && data.kb) {
+          KB_DATA = data.kb;
+          renderKbUI();
+        }
+      } catch (e) {
+        console.error('Error loading KB:', e);
+      }
+    }
+
+    function renderKbUI() {
+      if (!KB_DATA) return;
+      const p = KB_DATA.store_profile || {};
+      document.getElementById('headerStoreName').textContent = p.store_name || 'ThaiD Store';
+      document.getElementById('headerKbStats').textContent = `${(KB_DATA.products||[]).length} สินค้า / ${(KB_DATA.faqs||[]).length} FAQ`;
+      document.getElementById('chatHeaderName').textContent = `${p.admin_name || 'น้องใจดี'} (แอดมิน AI)`;
+
+      // Populate Form
+      document.getElementById('kbStoreName').value = p.store_name || '';
+      document.getElementById('kbAdminName').value = p.admin_name || '';
+      document.getElementById('kbTagline').value = p.tagline || '';
+      document.getElementById('kbDeliveryInfo').value = p.delivery_info || '';
+      document.getElementById('kbPaymentInfo').value = p.payment_info || '';
+      document.getElementById('kbReturnPolicy').value = p.return_policy || '';
+
+      // Products List
+      const prodList = document.getElementById('kbProductsList');
+      prodList.innerHTML = (KB_DATA.products || []).map(pr => `
+        <div class="p-2.5 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-900 flex items-center justify-between text-xs">
+          <div>
+            <div class="font-bold text-[#1d1d1f] dark:text-white">${pr.name}</div>
+            <div class="text-[11px] text-emerald-600 dark:text-emerald-400 font-semibold">${pr.price} บาท <span class="line-through text-stone-400 font-normal">${pr.original_price||''}</span></div>
+            <div class="text-[10px] text-stone-500 dark:text-stone-400">${pr.description}</div>
+          </div>
+          <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-500 font-bold text-[10px]">${pr.status}</span>
+        </div>
+      `).join('');
+
+      // FAQs List
+      const faqList = document.getElementById('kbFaqsList');
+      faqList.innerHTML = (KB_DATA.faqs || []).map(f => `
+        <div class="p-2.5 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-900 text-xs">
+          <div class="font-bold text-[#1d1d1f] dark:text-white mb-1">Q: ${f.question}</div>
+          <div class="text-[11px] text-stone-500 dark:text-stone-300">A: ${f.answer}</div>
+        </div>
+      `).join('');
+    }
+
+    async function handleSaveKb() {
+      if (!KB_DATA) return;
+      KB_DATA.store_profile.store_name = document.getElementById('kbStoreName').value.trim();
+      KB_DATA.store_profile.admin_name = document.getElementById('kbAdminName').value.trim();
+      KB_DATA.store_profile.tagline = document.getElementById('kbTagline').value.trim();
+      KB_DATA.store_profile.delivery_info = document.getElementById('kbDeliveryInfo').value.trim();
+      KB_DATA.store_profile.payment_info = document.getElementById('kbPaymentInfo').value.trim();
+      KB_DATA.store_profile.return_policy = document.getElementById('kbReturnPolicy').value.trim();
+
+      try {
+        const res = await fetch('/api/kb/save', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(KB_DATA)
+        });
+        const d = await res.json();
+        if (d.ok) {
+          alert('บันทึกข้อมูลคลังความรู้เรียบร้อยแล้ว!');
+          renderKbUI();
+        }
+      } catch (e) {
+        alert('เกิดข้อผิดพลาดในการบันทึกข้อมูล');
+      }
+    }
+
+    // Chat Simulator Logic
+    function handleChatKeyDown(e) {
+      if (e.key === 'Enter') handleSendMessage();
+    }
+
+    function sendQuickMessage(txt) {
+      document.getElementById('inputUserMessage').value = txt;
+      handleSendMessage();
+    }
+
+    async function handleSendMessage() {
+      const input = document.getElementById('inputUserMessage');
+      const text = input.value.trim();
+      if (!text) return;
+      input.value = '';
+
+      const container = document.getElementById('chatMessages');
+      const typing = document.getElementById('typingIndicator');
+
+      // Append User Message (Green Bubble)
+      container.innerHTML += `
+        <div class="flex items-start justify-end gap-2">
+          <div class="bg-[#06c755] text-white p-3 rounded-2xl rounded-tr-none shadow-sm leading-relaxed max-w-[85%] font-medium">
+            ${escapeHtml(text)}
+          </div>
+        </div>
+      `;
+      container.scrollTop = container.scrollHeight;
+      typing.classList.remove('hidden');
+
+      CHAT_HISTORY.push({ role: 'user', text: text });
+
+      try {
+        const res = await fetch('/api/chat/simulate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: text, history: CHAT_HISTORY })
+        });
+        const data = await res.json();
+        typing.classList.add('hidden');
+
+        if (data.ok && data.reply) {
+          CHAT_HISTORY.push({ role: 'assistant', text: data.reply });
+
+          // Append AI Message (White/Dark Bubble)
+          container.innerHTML += `
+            <div class="flex items-start gap-2 max-w-[85%]">
+              <div class="w-7 h-7 rounded-full bg-emerald-600 flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">
+                AI
+              </div>
+              <div class="bg-white dark:bg-[#2b333d] text-[#1d1d1f] dark:text-white p-3 rounded-2xl rounded-tl-none shadow-sm leading-relaxed whitespace-pre-wrap">
+                ${escapeHtml(data.reply)}
+              </div>
+            </div>
+          `;
+          container.scrollTop = container.scrollHeight;
+        }
+      } catch (e) {
+        typing.classList.add('hidden');
+        console.error('Chat error:', e);
+      }
+    }
+
+    function clearChatMessages() {
+      CHAT_HISTORY = [];
+      const p = (KB_DATA && KB_DATA.store_profile) || {};
+      document.getElementById('chatMessages').innerHTML = `
+        <div class="flex items-start gap-2 max-w-[85%]">
+          <div class="w-7 h-7 rounded-full bg-emerald-600 flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">
+            AI
+          </div>
+          <div class="bg-white dark:bg-[#2b333d] text-[#1d1d1f] dark:text-white p-3 rounded-2xl rounded-tl-none shadow-sm leading-relaxed">
+            สวัสดีค่ะ ยินดีต้อนรับเข้าสู่ <strong>${p.store_name||'ThaiD Store'}</strong> ค่ะ 😊 มีคำถามอะไรให้น้องใจดีช่วยดูแล สอบถามได้เลยนะคะ ✨
+          </div>
+        </div>
+      `;
+    }
+
+    // Load Settings
+    async function loadSettings() {
+      try {
+        const res = await fetch('/api/settings');
+        const data = await res.json();
+        if (data.ok && data.settings) {
+          document.getElementById('inputLineSecret').value = data.settings.line_channel_secret || '';
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    async function handleSaveLineSettings() {
+      const secret = document.getElementById('inputLineSecret').value.trim();
+      const token = document.getElementById('inputLineToken').value.trim();
+      try {
+        const res = await fetch('/api/settings/save', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ line_channel_secret: secret, line_channel_access_token: token })
+        });
+        const d = await res.json();
+        if (d.ok) alert('บันทึกการตั้งค่า LINE OA เรียบร้อยแล้ว!');
+      } catch (e) {
+        alert('เกิดข้อผิดพลาดในการบันทึก');
+      }
+    }
+
+    // Load Logs
+    async function loadChatLogs() {
+      try {
+        const res = await fetch('/api/chat/logs');
+        const data = await res.json();
+        if (data.ok) {
+          document.getElementById('statTotalMsgs').textContent = data.total_messages || 0;
+          const tbody = document.getElementById('logsTableBody');
+          if (!data.logs.length) {
+            tbody.innerHTML = `<tr><td colspan="4" class="py-6 text-center text-stone-400">ยังไม่มีประวัติการสนทนา</td></tr>`;
+            return;
+          }
+          tbody.innerHTML = data.logs.map(l => `
+            <tr>
+              <td class="py-2.5 px-3 text-stone-400 font-mono text-[11px] whitespace-nowrap">${l.time_str}</td>
+              <td class="py-2.5 px-3"><span class="px-1.5 py-0.5 rounded bg-stone-100 dark:bg-stone-800 font-mono text-[10px]">${l.channel}</span></td>
+              <td class="py-2.5 px-3 font-semibold text-[#1d1d1f] dark:text-white max-w-[200px] truncate" title="${escapeHtml(l.message)}">${escapeHtml(l.message)}</td>
+              <td class="py-2.5 px-3 text-stone-600 dark:text-stone-300 max-w-[300px] truncate" title="${escapeHtml(l.reply)}">${escapeHtml(l.reply)}</td>
+            </tr>
+          `).join('');
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+  </script>
+
+</body>
+</html>

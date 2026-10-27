@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+data/chat_logs.json
+data/settings.json
+.git
+.gitignore
+.dockerignore
