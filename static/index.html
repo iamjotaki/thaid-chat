@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="th" class="dark scroll-smooth bg-[#141414]">
+<html lang="th" class="dark scroll-smooth bg-[#131922]">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,10 +31,10 @@
             brand: {
               line: '#06c755',
               lineDark: '#05b04b',
-              blue: '#0071e3',
+              blue: '#0569ff',
               coral: '#e85a2d',
-              dark: '#0c0c0e',
-              cardDark: '#161619'
+              dark: '#131922',
+              cardDark: '#1f252e'
             }
           }
         }
@@ -63,12 +63,12 @@
   </style>
 </head>
 
-<body class="bg-[#141414] text-[#f5f5f7] min-h-screen flex flex-col font-sans selection:bg-[#0074e2]/30 selection:text-white">
+<body class="bg-[#131922] text-[#f5f5f7] min-h-screen flex flex-col font-sans selection:bg-[#0569ff]/30 selection:text-white">
 
   <!-- ======================================================== -->
   <!-- 1. TRANSLUCENT GLOBAL HEADER (APPLE FROSTED NAVBAR)     -->
   <!-- ======================================================== -->
-  <header class="sticky top-0 z-50 border-b border-white/[0.08] bg-[#141414]/90 backdrop-blur-md">
+  <header class="sticky top-0 z-50 border-b border-[#2b313b] bg-[#131922]/90 backdrop-blur-md">
     <div class="max-w-[1700px] w-full mx-auto px-4 sm:px-6 h-full flex items-center justify-between gap-4">
       
       <!-- Brand Logo -->
@@ -87,7 +87,7 @@
       </a>
 
       <!-- Center: Contextual Segmented Navigation Links (Unified Ecosystem Standard) -->
-      <nav class="hidden lg:flex items-center gap-1 bg-white/[0.04] p-1 rounded-xl border border-black/[0.04] dark:border-white/[0.05] text-xs font-medium">
+      <nav class="hidden lg:flex items-center gap-1 bg-white/[0.04] p-1 rounded-xl border border-black/[0.04] dark:border-[#2b313b] text-xs font-medium">
         <a href="https://thaid.online" class="px-2.5 py-1 rounded-lg text-[#86868b] hover:text-[#1d1d1f] dark:text-stone-400 dark:hover:text-white transition-colors flex items-center gap-1">
           <span class="material-symbols-outlined text-[13px]">hub</span>
           <span>ThaiD Hub</span>
@@ -121,7 +121,7 @@
           <span class="font-medium text-[11px]">Gemini 3.5 Ready</span>
         </div>
 
-        <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08] text-[11px] text-stone-400"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span>Fastwork Studio</span></div>
+        <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/[0.04] border border-[#2b313b] text-[11px] text-stone-400"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span>Fastwork Studio</span></div>
       </div>
 
     </div>
@@ -133,7 +133,7 @@
   <main class="max-w-[1700px] w-full mx-auto px-4 sm:px-6 py-6 flex-1 flex flex-col gap-6">
 
     <!-- Top Tab Navigation Ribbon -->
-    <div class="flex items-center justify-between border-b border-white/[0.08] pb-3 flex-wrap gap-3">
+    <div class="flex items-center justify-between border-b border-[#2b313b] pb-3 flex-wrap gap-3">
       
       <div class="flex items-center gap-1 bg-white/[0.04] p-1 rounded-xl text-xs font-semibold">
         <button onclick="switchTab('simulator')" id="tabBtnSimulator" class="tab-btn active px-3.5 py-1.5 rounded-lg bg-white dark:bg-stone-800 text-white shadow-xs flex items-center gap-1.5">
@@ -169,7 +169,7 @@
     <div id="tabContentSimulator" class="tab-content grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
       
       <!-- Left 7 Cols: Information & Quick Prompt Chips -->
-      <div class="lg:col-span-7 bg-[#1b1b1e] rounded-2xl p-5 border border-black/[0.06] dark:border-white/[0.08] shadow-sm flex flex-col gap-4">
+      <div class="lg:col-span-7 bg-[#1f252e] rounded-2xl p-5 border border-black/[0.06] dark:border-[#2b313b] shadow-sm flex flex-col gap-4">
         
         <div class="flex items-center justify-between border-b border-black/5 dark:border-white/5 pb-3">
           <div class="flex items-center gap-2">
@@ -237,7 +237,7 @@
         <div class="w-full max-w-[380px] rounded-[36px] bg-stone-900 border-4 border-stone-700 dark:border-stone-800 shadow-2xl overflow-hidden flex flex-col h-[650px]">
           
           <!-- LINE Chat Header Bar -->
-          <div class="bg-[#242b33] px-4 py-3 flex items-center justify-between border-b border-white/10 z-10">
+          <div class="bg-[#242b33] px-4 py-3 flex items-center justify-between border-b border-[#2b313b] z-10">
             <div class="flex items-center gap-2.5">
               <span class="material-symbols-outlined text-white text-[20px] cursor-pointer">arrow_back_ios</span>
               <div class="w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold text-xs shadow-xs">
@@ -278,8 +278,8 @@
           </div>
 
           <!-- Input Bottom Bar -->
-          <div class="bg-[#242b33] p-2.5 flex items-center gap-2 border-t border-white/10">
-            <input id="inputUserMessage" type="text" onkeydown="handleChatKeyDown(event)" placeholder="พิมพ์ข้อความคุยกับแอดมิน..." class="flex-1 bg-[#1a1f26] border border-white/10 rounded-full px-3.5 py-2 text-xs text-white placeholder-stone-400 focus:outline-none focus:border-emerald-500">
+          <div class="bg-[#242b33] p-2.5 flex items-center gap-2 border-t border-[#2b313b]">
+            <input id="inputUserMessage" type="text" onkeydown="handleChatKeyDown(event)" placeholder="พิมพ์ข้อความคุยกับแอดมิน..." class="flex-1 bg-[#1a1f26] border border-[#2b313b] rounded-full px-3.5 py-2 text-xs text-white placeholder-stone-400 focus:outline-none focus:border-emerald-500">
             <button onclick="handleSendMessage()" class="w-8 h-8 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center transition-colors flex-shrink-0">
               <span class="material-symbols-outlined text-[16px]">send</span>
             </button>
@@ -297,7 +297,7 @@
     <div id="tabContentKb" class="tab-content hidden grid grid-cols-1 lg:grid-cols-12 gap-6">
       
       <!-- Store Profile Card -->
-      <div class="lg:col-span-6 bg-[#1b1b1e] rounded-2xl p-5 border border-black/[0.06] dark:border-white/[0.08] shadow-sm flex flex-col gap-4">
+      <div class="lg:col-span-6 bg-[#1f252e] rounded-2xl p-5 border border-black/[0.06] dark:border-[#2b313b] shadow-sm flex flex-col gap-4">
         <div class="flex items-center gap-2 border-b border-black/5 dark:border-white/5 pb-3">
           <span class="material-symbols-outlined text-emerald-500">store</span>
           <h3 class="font-bold text-sm text-white">ข้อมูลร้านค้า & แอดมิน (Store Profile)</h3>
@@ -346,7 +346,7 @@
       <div class="lg:col-span-6 flex flex-col gap-5">
         
         <!-- Products Box -->
-        <div class="bg-[#1b1b1e] rounded-2xl p-5 border border-black/[0.06] dark:border-white/[0.08] shadow-sm flex flex-col gap-3">
+        <div class="bg-[#1f252e] rounded-2xl p-5 border border-black/[0.06] dark:border-[#2b313b] shadow-sm flex flex-col gap-3">
           <div class="flex items-center justify-between border-b border-black/5 dark:border-white/5 pb-2">
             <div class="flex items-center gap-2">
               <span class="material-symbols-outlined text-blue-500">inventory_2</span>
@@ -364,7 +364,7 @@
         </div>
 
         <!-- FAQs Box -->
-        <div class="bg-[#1b1b1e] rounded-2xl p-5 border border-black/[0.06] dark:border-white/[0.08] shadow-sm flex flex-col gap-3">
+        <div class="bg-[#1f252e] rounded-2xl p-5 border border-black/[0.06] dark:border-[#2b313b] shadow-sm flex flex-col gap-3">
           <div class="flex items-center justify-between border-b border-black/5 dark:border-white/5 pb-2">
             <div class="flex items-center gap-2">
               <span class="material-symbols-outlined text-purple-500">help</span>
@@ -388,7 +388,7 @@
     <!-- ======================================================== -->
     <!-- TAB 3: LINE OA SETUP & WEBHOOK GUIDE                    -->
     <!-- ======================================================== -->
-    <div id="tabContentLineSetup" class="tab-content hidden max-w-4xl mx-auto w-full bg-[#1b1b1e] rounded-2xl p-6 border border-black/[0.06] dark:border-white/[0.08] shadow-sm flex flex-col gap-5">
+    <div id="tabContentLineSetup" class="tab-content hidden max-w-4xl mx-auto w-full bg-[#1f252e] rounded-2xl p-6 border border-black/[0.06] dark:border-[#2b313b] shadow-sm flex flex-col gap-5">
       
       <div class="flex items-center gap-2 border-b border-black/5 dark:border-white/5 pb-3">
         <span class="material-symbols-outlined text-[#06c755]">phonelink_setup</span>
@@ -445,7 +445,7 @@
       
       <!-- Stats Cards -->
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div class="bg-[#1b1b1e] rounded-2xl p-4 border border-black/[0.06] dark:border-white/[0.08] shadow-sm flex items-center gap-3">
+        <div class="bg-[#1f252e] rounded-2xl p-4 border border-black/[0.06] dark:border-[#2b313b] shadow-sm flex items-center gap-3">
           <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
             <span class="material-symbols-outlined text-[22px]">mark_chat_read</span>
           </div>
@@ -455,7 +455,7 @@
           </div>
         </div>
 
-        <div class="bg-[#1b1b1e] rounded-2xl p-4 border border-black/[0.06] dark:border-white/[0.08] shadow-sm flex items-center gap-3">
+        <div class="bg-[#1f252e] rounded-2xl p-4 border border-black/[0.06] dark:border-[#2b313b] shadow-sm flex items-center gap-3">
           <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center">
             <span class="material-symbols-outlined text-[22px]">speed</span>
           </div>
@@ -465,7 +465,7 @@
           </div>
         </div>
 
-        <div class="bg-[#1b1b1e] rounded-2xl p-4 border border-black/[0.06] dark:border-white/[0.08] shadow-sm flex items-center gap-3">
+        <div class="bg-[#1f252e] rounded-2xl p-4 border border-black/[0.06] dark:border-[#2b313b] shadow-sm flex items-center gap-3">
           <div class="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-500 flex items-center justify-center">
             <span class="material-symbols-outlined text-[22px]">support_agent</span>
           </div>
@@ -477,7 +477,7 @@
       </div>
 
       <!-- Logs Table -->
-      <div class="bg-[#1b1b1e] rounded-2xl p-5 border border-black/[0.06] dark:border-white/[0.08] shadow-sm flex flex-col gap-3">
+      <div class="bg-[#1f252e] rounded-2xl p-5 border border-black/[0.06] dark:border-[#2b313b] shadow-sm flex flex-col gap-3">
         <div class="flex items-center justify-between border-b border-black/5 dark:border-white/5 pb-2">
           <h3 class="font-bold text-sm text-white">ประวัติการสนทนาล่าสุด (Recent Chat Logs)</h3>
           <button onclick="loadChatLogs()" class="px-2.5 py-1 rounded-lg bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 text-xs font-semibold transition-colors flex items-center gap-1">
@@ -512,7 +512,7 @@
   <!-- ======================================================== -->
   <!-- 3. FOOTER                                               -->
   <!-- ======================================================== -->
-  <footer class="mt-auto border-t border-white/[0.08] bg-white/50 dark:bg-[#161619]/50 backdrop-blur-md py-6 text-xs text-stone-500">
+  <footer class="mt-auto border-t border-[#2b313b] bg-white/50 dark:bg-[#1f252e]/50 backdrop-blur-md py-6 text-xs text-stone-500">
     <div class="max-w-[1700px] w-full mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
       <div class="flex items-center gap-2">
         <span class="font-bold text-white">ThaiD Smart Chat AI Studio</span>
