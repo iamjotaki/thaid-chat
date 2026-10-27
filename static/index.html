@@ -541,14 +541,9 @@
       await loadChatLogs();
     });
 
-    // ThaiD Studio Theme
-
-    // ThaiD Studio Theme else {
-        document.documentElement.classList.remove('light');
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('thaid-theme', 'dark');
-        document.getElementById('themeIcon').textContent = 'light_mode';
-      }
+    function initTheme() {
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
     }
 
     function switchTab(tabId) {
