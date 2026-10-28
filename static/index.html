@@ -325,7 +325,7 @@
         <div class="flex items-center justify-between border-b border-black/5 dark:border-white/5 pb-3">
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-[#0569ff]">smart_toy</span>
-            <h3 class="font-bold text-sm text-white">แอดมิน AI ตอบคำถามเสมือนจริง (AI Admin Sandbox)</h3>
+            <h3 class="font-bold text-sm text-[#171717]">แอดมิน AI ตอบคำถามเสมือนจริง (AI Admin Sandbox)</h3>
           </div>
           <span class="text-[11px] font-semibold text-[#0569ff] dark:text-emerald-400 bg-[#0569ff]/10 px-2.5 py-0.5 rounded-full">
             ตอบกลับใน ~0.8 วินาที
@@ -365,17 +365,17 @@
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-3 border-t border-black/5 dark:border-white/5">
           <div class="p-3 rounded-xl bg-stone-50 dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800">
             <span class="material-symbols-outlined text-[#0569ff] text-[18px]">bolt</span>
-            <div class="text-xs font-bold text-white mt-1">ตอบกลับทันที 24/7</div>
+            <div class="text-xs font-bold text-[#171717] mt-1">ตอบกลับทันที 24/7</div>
             <div class="text-[10px] text-[#737373]">ไม่ต้องรอแอดมินคนพิมพ์</div>
           </div>
           <div class="p-3 rounded-xl bg-stone-50 dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800">
             <span class="material-symbols-outlined text-blue-500 text-[18px]">verified</span>
-            <div class="text-xs font-bold text-white mt-1">คลังความรู้ส่วนตัว</div>
+            <div class="text-xs font-bold text-[#171717] mt-1">คลังความรู้ส่วนตัว</div>
             <div class="text-[10px] text-[#737373]">ตอบตามข้อมูลร้าน 100%</div>
           </div>
           <div class="p-3 rounded-xl bg-stone-50 dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800">
             <span class="material-symbols-outlined text-pink-500 text-[18px]">currency_exchange</span>
-            <div class="text-xs font-bold text-white mt-1">ต้นทุน API 0 บาท</div>
+            <div class="text-xs font-bold text-[#171717] mt-1">ต้นทุน API 0 บาท</div>
             <div class="text-[10px] text-[#737373]">ใช้ 80 คีย์ฟรีจาก ThaiD Vault</div>
           </div>
         </div>
@@ -390,12 +390,12 @@
           <!-- LINE Chat Header Bar -->
           <div class="bg-[#242b33] px-4 py-3 flex items-center justify-between border-b border-black/[0.08] z-10">
             <div class="flex items-center gap-2.5">
-              <span class="material-symbols-outlined text-white text-[20px] cursor-pointer">arrow_back_ios</span>
+              <span class="material-symbols-outlined text-stone-700 text-[20px] cursor-pointer">arrow_back_ios</span>
               <div class="w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold text-xs shadow-xs">
                 TH
               </div>
               <div>
-                <div class="font-bold text-xs text-white" id="chatHeaderName">น้องใจดี (แอดมิน AI)</div>
+                <div class="font-bold text-xs text-[#171717]" id="chatHeaderName">น้องใจดี (แอดมิน AI)</div>
                 <div class="text-[10px] text-emerald-400 flex items-center gap-1">
                   <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                   <span>พร้อมตอบกลับทันที</span>
@@ -415,7 +415,7 @@
               <div class="w-7 h-7 rounded-full bg-emerald-600 flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">
                 AI
               </div>
-              <div class="bg-white dark:bg-[#2b333d] text-white p-3 rounded-2xl rounded-tl-none shadow-sm leading-relaxed">
+              <div class="bg-white border border-stone-200 text-[#171717] p-3 rounded-2xl rounded-tl-none shadow-xs leading-relaxed font-medium">
                 สวัสดีค่ะ ยินดีต้อนรับเข้าสู่ <strong>ThaiD Gadget & Lifestyle</strong> ค่ะ 😊 วันนี้มีอะไรให้น้องใจดีช่วยดูแล สอบถามสินค้าหรือโปรโมชั่นพิเศษได้เลยนะคะ ✨
               </div>
             </div>
@@ -430,7 +430,7 @@
 
           <!-- Input Bottom Bar -->
           <div class="bg-[#242b33] p-2.5 flex items-center gap-2 border-t border-black/[0.08]">
-            <input id="inputUserMessage" type="text" onkeydown="handleChatKeyDown(event)" placeholder="พิมพ์ข้อความคุยกับแอดมิน..." class="flex-1 bg-[#1a1f26] border border-black/[0.08] rounded-full px-3.5 py-2 text-xs text-white placeholder-stone-400 focus:outline-none focus:border-emerald-500">
+            <input id="inputUserMessage" type="text" onkeydown="handleChatKeyDown(event)" placeholder="พิมพ์ข้อความคุยกับแอดมิน..." class="flex-1 bg-white border border-stone-300 rounded-full px-3.5 py-2 text-xs text-[#171717] font-medium placeholder-stone-500 focus:outline-none focus:border-emerald-500 shadow-2xs">
             <button onclick="handleSendMessage()" class="w-8 h-8 rounded-full bg-emerald-600 hover:bg-[#0569ff] text-white flex items-center justify-center transition-colors flex-shrink-0">
               <span class="material-symbols-outlined text-[16px]">send</span>
             </button>
@@ -543,7 +543,7 @@
       
       <div class="flex items-center gap-2 border-b border-black/5 dark:border-white/5 pb-3">
         <span class="material-symbols-outlined text-[#06c755]">phonelink_setup</span>
-        <h3 class="font-bold text-sm text-white">วิธีเชื่อมต่อ LINE Official Account (Webhook Integration)</h3>
+        <h3 class="font-bold text-sm text-[#171717]">วิธีเชื่อมต่อ LINE Official Account (Webhook Integration)</h3>
       </div>
 
       <!-- Step 1: Webhook URL -->
@@ -573,12 +573,12 @@
 
         <div>
           <label class="block font-semibold text-stone-600 dark:text-stone-700 mb-1">Channel Secret (ดูในแท็บ Basic Settings):</label>
-          <input id="inputLineSecret" type="password" placeholder="ระบุ Channel Secret 32 ตัวอักษร..." class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg px-3 py-2 text-xs font-mono text-white">
+          <input id="inputLineSecret" type="password" placeholder="ระบุ Channel Secret 32 ตัวอักษร..." class="w-full bg-stone-50 border border-stone-300 rounded-lg px-3 py-2 text-xs font-mono text-[#171717]">
         </div>
 
         <div>
           <label class="block font-semibold text-stone-600 dark:text-stone-700 mb-1">Channel Access Token (long-lived) (ดูในแท็บ Messaging API):</label>
-          <textarea id="inputLineToken" rows="3" placeholder="ระบุ Channel Access Token..." class="w-full bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg p-2.5 text-xs font-mono text-white"></textarea>
+          <textarea id="inputLineToken" rows="3" placeholder="ระบุ Channel Access Token..." class="w-full bg-stone-50 border border-stone-300 rounded-lg p-2.5 text-xs font-mono text-[#171717]"></textarea>
         </div>
 
         <button onclick="handleSaveLineSettings()" class="py-2.5 px-6 rounded-full bg-[#171717] hover:bg-black text-white font-semibold text-xs shadow-sm hover:shadow transition-all transition-colors flex items-center gap-1.5">
@@ -602,7 +602,7 @@
           </div>
           <div>
             <div class="text-[11px] text-stone-500 dark:text-[#737373] font-semibold">ข้อความตอบกลับสะสม</div>
-            <div class="text-xl font-bold text-white" id="statTotalMsgs">0</div>
+            <div class="text-xl font-bold text-[#171717]" id="statTotalMsgs">0</div>
           </div>
         </div>
 
@@ -612,7 +612,7 @@
           </div>
           <div>
             <div class="text-[11px] text-stone-500 dark:text-[#737373] font-semibold">ความเร็วเฉลี่ย AI</div>
-            <div class="text-xl font-bold text-white">~0.85s</div>
+            <div class="text-xl font-bold text-emerald-600">~0.85s</div>
           </div>
         </div>
 
@@ -630,7 +630,7 @@
       <!-- Logs Table -->
       <div class="bg-white rounded-2xl p-5 border border-black/[0.06] dark:border-black/[0.08] shadow-sm flex flex-col gap-3">
         <div class="flex items-center justify-between border-b border-black/5 dark:border-white/5 pb-2">
-          <h3 class="font-bold text-sm text-white">ประวัติการสนทนาล่าสุด (Recent Chat Logs)</h3>
+          <h3 class="font-bold text-sm text-[#171717]">ประวัติการสนทนาล่าสุด (Recent Chat Logs)</h3>
           <button onclick="loadChatLogs()" class="px-2.5 py-1 rounded-lg bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-700 text-xs font-semibold transition-colors flex items-center gap-1">
             <span class="material-symbols-outlined text-[13px]">refresh</span>
             <span>รีเฟรช</span>
@@ -752,7 +752,7 @@
       prodList.innerHTML = (KB_DATA.products || []).map(pr => `
         <div class="p-2.5 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-900 flex items-center justify-between text-xs">
           <div>
-            <div class="font-bold text-white">${pr.name}</div>
+            <div class="font-bold text-[#171717]">${pr.name}</div>
             <div class="text-[11px] text-[#0569ff] dark:text-emerald-400 font-semibold">${pr.price} บาท <span class="line-through text-[#737373] font-normal">${pr.original_price||''}</span></div>
             <div class="text-[10px] text-stone-500 dark:text-[#737373]">${pr.description}</div>
           </div>
@@ -764,7 +764,7 @@
       const faqList = document.getElementById('kbFaqsList');
       faqList.innerHTML = (KB_DATA.faqs || []).map(f => `
         <div class="p-2.5 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-900 text-xs">
-          <div class="font-bold text-white mb-1">Q: ${f.question}</div>
+          <div class="font-bold text-[#171717] mb-1">Q: ${f.question}</div>
           <div class="text-[11px] text-stone-500 dark:text-stone-700">A: ${f.answer}</div>
         </div>
       `).join('');
@@ -845,7 +845,7 @@
               <div class="w-7 h-7 rounded-full bg-emerald-600 flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">
                 AI
               </div>
-              <div class="bg-white dark:bg-[#2b333d] text-white p-3 rounded-2xl rounded-tl-none shadow-sm leading-relaxed whitespace-pre-wrap">
+              <div class="bg-white border border-stone-200 text-[#171717] p-3 rounded-2xl rounded-tl-none shadow-xs leading-relaxed whitespace-pre-wrap font-medium">
                 ${escapeHtml(data.reply)}
               </div>
             </div>
@@ -866,7 +866,7 @@
           <div class="w-7 h-7 rounded-full bg-emerald-600 flex-shrink-0 flex items-center justify-center text-white text-[10px] font-bold">
             AI
           </div>
-          <div class="bg-white dark:bg-[#2b333d] text-white p-3 rounded-2xl rounded-tl-none shadow-sm leading-relaxed">
+          <div class="bg-white border border-stone-200 text-[#171717] p-3 rounded-2xl rounded-tl-none shadow-xs leading-relaxed font-medium">
             สวัสดีค่ะ ยินดีต้อนรับเข้าสู่ <strong>${p.store_name||'ThaiD Store'}</strong> ค่ะ 😊 มีคำถามอะไรให้น้องใจดีช่วยดูแล สอบถามได้เลยนะคะ ✨
           </div>
         </div>
@@ -918,7 +918,7 @@
             <tr>
               <td class="py-2.5 px-3 text-[#737373] font-mono text-[11px] whitespace-nowrap">${l.time_str}</td>
               <td class="py-2.5 px-3"><span class="px-1.5 py-0.5 rounded bg-stone-100 dark:bg-stone-800 font-mono text-[10px]">${l.channel}</span></td>
-              <td class="py-2.5 px-3 font-semibold text-white max-w-[200px] truncate" title="${escapeHtml(l.message)}">${escapeHtml(l.message)}</td>
+              <td class="py-2.5 px-3 font-semibold text-[#171717] max-w-[200px] truncate" title="${escapeHtml(l.message)}">${escapeHtml(l.message)}</td>
               <td class="py-2.5 px-3 text-stone-600 dark:text-stone-700 max-w-[300px] truncate" title="${escapeHtml(l.reply)}">${escapeHtml(l.reply)}</td>
             </tr>
           `).join('');
