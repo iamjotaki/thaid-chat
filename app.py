@@ -68,6 +68,22 @@ def serve_index():
     return {"message": "ThaiD Smart Chat AI Studio Live"}
 
 
+@app.get("/dashboard")
+def serve_dashboard():
+    dashboard_file = os.path.join(STATIC_DIR, "dashboard.html")
+    if os.path.exists(dashboard_file):
+        return FileResponse(dashboard_file)
+    return FileResponse(os.path.join(STATIC_DIR, "index.html"))
+
+
+@app.get("/admin")
+def serve_admin():
+    admin_file = os.path.join(STATIC_DIR, "admin.html")
+    if os.path.exists(admin_file):
+        return FileResponse(admin_file)
+    return FileResponse(os.path.join(STATIC_DIR, "index.html"))
+
+
 @app.get("/api/status")
 def get_system_status():
     """Health check, KB stats, and connection status."""
